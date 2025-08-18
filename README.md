@@ -1,57 +1,65 @@
-# KYC Dashboard - Next.js Application
+# Portfolio - Next.js Application
 
-A professional KYC (Know Your Customer) dashboard built with Next.js 14, featuring real-time analytics, interactive charts, and a responsive design.
+A modern, responsive portfolio website built with Next.js 14, featuring smooth animations, dark mode support, and a professional contact form with email integration.
 
 ## 🚀 Features
 
 ### Core Functionality
-- **Comprehensive Dashboard**: Real-time KYC metrics and analytics
-- **Interactive Charts**: Bar charts and pie charts with hover tooltips using Recharts
-- **Status Tracking**: Monitor KYC applications across different stages
-- **Category Analytics**: RI/NRI breakdown with progress visualization
-- **Time Range Filtering**: Today, This Month, and Custom date ranges
-- **View Type Switching**: Individual vs Non-Individual data views
+- **Hero Section**: Dynamic introduction with animated text and call-to-action
+- **About Section**: Professional background and skills showcase
+- **Projects Section**: Portfolio of work with detailed descriptions
+- **Contact Form**: Functional contact form with email notifications
+- **Responsive Navigation**: Mobile-friendly navigation with smooth scrolling
 
 ### UI/UX Features
 - **Dark Mode Support**: Toggle between light and dark themes
-- **Responsive Design**: Mobile-first approach with collapsible sidebar
-- **Loading States**: Skeleton loaders for improved perceived performance
-- **Smooth Animations**: Micro-interactions and transitions
-- **Professional Design**: Clean, modern interface following enterprise standards
+- **Responsive Design**: Mobile-first approach with fluid layouts
+- **Smooth Animations**: Framer Motion powered micro-interactions
+- **Loading States**: Form submission feedback and loading indicators
+- **Professional Design**: Clean, modern interface with gradient accents
 
 ### Technical Features
 - **Next.js 14**: App Router with TypeScript
 - **Tailwind CSS**: Utility-first styling with custom design system
-- **Recharts**: Interactive and responsive charts
+- **Framer Motion**: Smooth animations and transitions
 - **Lucide Icons**: Consistent iconography
-- **Mock API**: Dynamic data loading simulation
+- **Email Integration**: Nodemailer with Gmail SMTP
+- **Form Handling**: React Hook Form with validation
+- **Database**: MongoDB for contact form submissions
 
 ## 🛠 Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
 - **Styling**: Tailwind CSS
-- **Charts**: Recharts
+- **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **UI Components**: Radix UI primitives
 - **Theme**: next-themes for dark mode
+- **Forms**: React Hook Form
+- **Email**: Nodemailer
+- **Database**: MongoDB
+- **Notifications**: Sonner
 - **TypeScript**: Full type safety
 
-## 📋 Requirements Implemented
+## 📋 Features Implemented
 
 ### Layout & Sections ✅
-- **Sidebar Navigation**: Logo, menu items with active highlighting
-- **Top Navbar**: Breadcrumb, search bar, notification icon, profile section
-- **Main Dashboard**: All sections as per requirements
+- **Navigation**: Responsive navbar with smooth scrolling
+- **Hero Section**: Animated introduction with gradient text
+- **About Section**: Professional background showcase
+- **Projects Section**: Portfolio gallery with descriptions
+- **Contact Section**: Functional contact form with validation
 
 ### Functionality ✅
-- **Tab Switching**: Time range and view type controls
-- **Responsive Design**: Mobile-friendly with collapsible sidebar
-- **Dynamic Data Loading**: All stats populated from mock API
+- **Contact Form**: Email submission with MongoDB storage
+- **Responsive Design**: Mobile-friendly across all devices
+- **Form Validation**: Client-side validation with error handling
+- **Email Notifications**: Automated email sending via Nodemailer
 
 ### Bonus Features ✅
 - **Dark Mode**: Complete theme switching
-- **Loading Skeletons**: Enhanced user experience
-- **Interactive Charts**: Hover tooltips and animations
+- **Smooth Animations**: Framer Motion powered interactions
+- **Toast Notifications**: User feedback for form submissions
 
 ## 🚀 Getting Started
 
@@ -63,8 +71,8 @@ A professional KYC (Know Your Customer) dashboard built with Next.js 14, featuri
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd kyc-dashboard
+git clone <https://github.com/ankit-mehta07/Portfoliol>
+cd portfolio
 ```
 
 2. Install dependencies:
@@ -72,34 +80,39 @@ cd kyc-dashboard
 npm install
 ```
 
-3. Run the development server:
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
+
+Add your environment variables:
+```env
+MONGODB_URI=your-mongodb-connection-string
+EMAIL_USER=your-gmail@gmail.com
+EMAIL_PASS=your-gmail-app-password
+```
+
+4. Run the development server:
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📁 Project Structure
 
 ```
 ├── app/
-│   ├── api/dashboard/           # Mock API endpoints
-│   ├── applications/            # Applications page
-│   ├── billing/                # Billing page
+│   ├── api/contact/            # Contact form API endpoint
 │   ├── globals.css             # Global styles
 │   ├── layout.tsx              # Root layout
-│   └── page.tsx               # Home page (Dashboard)
+│   └── page.tsx               # Home page
 ├── components/
-│   ├── dashboard/              # Dashboard-specific components
-│   │   ├── sidebar.tsx
-│   │   ├── navbar.tsx
-│   │   ├── dashboard-content.tsx
-│   │   ├── stats-card.tsx
-│   │   ├── bar-chart.tsx
-│   │   ├── status-cards.tsx
-│   │   ├── category-section.tsx
-│   │   ├── circular-chart.tsx
-│   │   └── pan-data-stats.tsx
+│   ├── hero.tsx               # Hero section component
+│   ├── about.tsx              # About section component
+│   ├── projects.tsx           # Projects section component
+│   ├── contact.tsx            # Contact section component
+│   ├── navbar.tsx             # Navigation component
 │   ├── ui/                    # Reusable UI components
 │   └── theme-provider.tsx     # Theme context provider
 ├── lib/
@@ -109,23 +122,26 @@ npm run dev
 
 ## 🔌 API Endpoints
 
-### Dashboard Data
-- **GET** `/api/dashboard?timeRange={today|thisMonth|custom}&viewType={individual|nonIndividual}`
-  - Returns comprehensive dashboard data including metrics, charts data, and statistics
+### Contact Form
+- **POST** `/api/contact`
+  - Accepts: `{ name, email, subject, message }`
+  - Stores submission in MongoDB
+  - Sends email notification via Nodemailer
+  - Returns success/error response
 
 ## 🎨 Design System
 
 ### Colors
-- **Primary**: Blue (#3B82F6) - Main brand color
-- **Success**: Green (#10B981) - Positive metrics
-- **Warning**: Orange (#F59E0B) - Cautionary states
-- **Error**: Red (#EF4444) - Errors and critical issues
+- **Primary**: Indigo/Purple gradients - Main brand colors
+- **Success**: Green (#10B981) - Success states
+- **Warning**: Orange (#F59E0B) - Warning states
+- **Error**: Red (#EF4444) - Error states
 
 ### Components
-- **Cards**: Clean card-based layout
-- **Charts**: Interactive Recharts components
-- **Progress Bars**: Animated category breakdowns
-- **Status Indicators**: Color-coded KYC stages
+- **Cards**: Glass morphism design with backdrop blur
+- **Buttons**: Gradient backgrounds with hover effects
+- **Forms**: Clean input styling with validation states
+- **Animations**: Smooth transitions and micro-interactions
 
 ## 📱 Responsive Breakpoints
 
@@ -159,17 +175,17 @@ npm start
 - Safari 14+
 - Edge 91+
 
-## 📸 Screenshots
+## 📸 Features
 
-The dashboard includes:
-- Interactive sidebar navigation
-- Real-time KYC metrics
-- Bar charts for Individual vs Non-Individual comparison
-- Status cards for KYC stages
-- Category progress bars
-- Circular charts for PAN data
+The portfolio includes:
+- Animated hero section with gradient text
+- Professional about section
+- Project showcase with descriptions
+- Functional contact form with email integration
 - Dark mode support
 - Mobile responsive design
+- Smooth scrolling navigation
+- Toast notifications for user feedback
 
 ## 🤝 Contributing
 
