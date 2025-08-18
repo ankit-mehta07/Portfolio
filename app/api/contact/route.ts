@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import mongoose from 'mongoose'
-import nodemailer from 'nodemailer'
+// import nodemailer from 'nodemailer'
 
 const contactSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -21,13 +21,13 @@ async function connectDB() {
   }
 }
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER!,
-    pass: process.env.EMAIL_PASS!
-  }
-})
+// const transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: process.env.EMAIL_USER!,
+//     pass: process.env.EMAIL_PASS!
+//   }
+// })
 
 export async function POST(request: NextRequest) {
   try {
@@ -42,25 +42,25 @@ export async function POST(request: NextRequest) {
     const contact = new Contact({ name, email, subject, message })
     await contact.save()
 
-    const mailOptions = {
-      from: email,
-      to: 'ankitmehta822158@gmail.com',
-      subject: `Portfolio Contact: ${subject}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #4f46e5;">New Contact Form Submission</h2>
-          <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Subject:</strong> ${subject}</p>
-            <p><strong>Message:</strong></p>
-            <p style="background: white; padding: 15px; border-radius: 4px;">${message}</p>
-          </div>
-        </div>
-      `
-    }
+    // const mailOptions = {
+    //   from: email,
+    //   to: 'ankitmehta822158@gmail.com',
+    //   subject: `Portfolio Contact: ${subject}`,
+    //   html: `
+    //     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+    //       <h2 style="color: #4f46e5;">New Contact Form Submission</h2>
+    //       <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+    //         <p><strong>Name:</strong> ${name}</p>
+    //         <p><strong>Email:</strong> ${email}</p>
+    //         <p><strong>Subject:</strong> ${subject}</p>
+    //         <p><strong>Message:</strong></p>
+    //         <p style="background: white; padding: 15px; border-radius: 4px;">${message}</p>
+    //       </div>
+    //     </div>
+    //   `
+    // }
 
-    await transporter.sendMail(mailOptions)
+    // await transporter.sendMail(mailOptions)
 
     return NextResponse.json({ success: true, message: 'Message sent successfully!' })
   } catch (error) {
