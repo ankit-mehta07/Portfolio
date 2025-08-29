@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, Eye, Zap, Target, TrendingUp } from 'lucide-react'
+import { ExternalLink, FileText, Eye, Zap, Target, TrendingUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -11,21 +11,23 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Sponza.in – Influencer-Business Collaboration Platform',
-      description: 'Designed and executed comprehensive product roadmap for an influencer-business collaboration platform. Led 25+ sprints and authored detailed PRDs with clear requirements.',
+      title: 'Sponza.in – AI-Powered Influencer-Brand Ecosystem',
+      description: 'Led end-to-end product development of a commission-free platform connecting influencers with businesses. Conducted extensive user research with 75+ stakeholders and built an AI-powered matching system that eliminates 20-25% middleman fees.',
       image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Jira', 'Figma', 'Agile', 'PRDs', 'Sprint Management'],
+      technologies: ['Product Management', 'User Research', 'AI Matching', 'Figma', 'MoSCoW Prioritization', 'A/B Testing'],
       achievements: [
-        'Enhanced delivery efficiency by 30% through agile methodologies',
-        'Led 25+ sprints with comprehensive documentation',
-        'Utilized Jira for backlog prioritization and cross-team collaboration'
+        'Interviewed 25+ businesses and 50+ creators for market validation',
+        'Collected 120+ survey responses to define core features',
+        'Designed commission-free model saving businesses 20-25% costs',
+        'Built AI-powered matching system for nano/micro influencers',
+        'Implemented secure payment integration and analytics dashboard'
       ],
       metrics: [
-        { icon: Zap, label: 'Efficiency Boost', value: '30%' },
-        { icon: Target, label: 'Sprints Led', value: '25+' }
+        { icon: Target, label: 'User Interviews', value: '75+' },
+        { icon: TrendingUp, label: 'Cost Savings', value: '25%' }
       ],
-      githubUrl: 'https://github.com/ankit-mehta07',
-      liveUrl: 'https://github.com/ankit-mehta07',
+      githubUrl: '/case-studies/sponza',
+      liveUrl: 'https://sponza.in',
       featured: true,
       color: 'from-cyan-500 to-blue-600',
       bgColor: 'from-cyan-50/30 to-blue-50/30',
@@ -33,21 +35,23 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'MartxMart.com – E-commerce Optimization',
-      description: 'Redesigned complete shopping experience in Figma, achieving significant performance improvements. Prioritized backlog and conducted iterative A/B testing to optimize checkout flow.',
+      title: 'MartxMart.com – B2B Machinery Marketplace',
+      description: 'Designed and launched a specialized e-commerce platform for machinery sales, focusing on trust, security, and user experience. Implemented vendor onboarding system, quotation management, and secure payment integration for high-value B2B transactions.',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Figma', 'A/B Testing', 'UX Design', 'KPIs', 'Analytics'],
+      technologies: ['E-commerce', 'B2B Platform', 'Vendor Management', 'Payment Integration', 'Order Tracking', 'UX Design'],
       achievements: [
-        'Reduced bounce rate by 15% through UX improvements',
-        'Defined KPIs and success metrics for feature adoption',
-        'Partnered with developers to accelerate release cycles'
+        'Built comprehensive vendor onboarding and product listing system',
+        'Implemented secure payment gateway for high-value transactions',
+        'Designed quotation system for custom machinery requirements',
+        'Created order tracking and wishlist functionality',
+        'Established zero-commission model for early vendor adoption'
       ],
       metrics: [
-        { icon: TrendingUp, label: 'Bounce Rate Reduction', value: '15%' },
-        { icon: Target, label: 'KPIs Defined', value: '10+' }
+        { icon: Zap, label: 'Commission Rate', value: '0%' },
+        { icon: Target, label: 'Vendor Onboarding', value: '100%' }
       ],
-      githubUrl: 'https://github.com/ankit-mehta07',
-      liveUrl: 'https://github.com/ankit-mehta07',
+      githubUrl: '/case-studies/martxmart',
+      liveUrl: 'https://martxmart.com',
       featured: true,
       color: 'from-indigo-500 to-purple-600',
       bgColor: 'from-indigo-50/30 to-purple-50/30',
@@ -213,8 +217,8 @@ const Projects = () => {
                       asChild
                     >
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-5 h-5" />
-                        <span>View Details</span>
+                        <FileText className="w-5 h-5" />
+                        <span>Case Study</span>
                       </a>
                     </Button>
                   </motion.div>

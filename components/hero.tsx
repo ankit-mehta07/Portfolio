@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowDown, Sparkles, Download, Play } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 export default function Hero() {
   const handleDownloadResume = () => {
@@ -20,7 +21,7 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-950 dark:via-blue-950 dark:to-indigo-950">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-950 dark:via-blue-950 dark:to-indigo-950 pt-20">
       {/* Enhanced Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 dark:from-cyan-400/5 dark:via-blue-400/5 dark:to-purple-400/5" />
@@ -46,105 +47,116 @@ export default function Hero() {
         className="absolute top-1/2 left-1/4 w-20 h-20 bg-gradient-to-r from-emerald-400/15 to-teal-500/15 dark:from-emerald-400/8 dark:to-teal-500/8 rounded-full blur-xl"
       />
       
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-        {/* Animated Icon */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1.2, type: "spring", bounce: 0.4 }}
-          className="mb-8"
-        >
-          <div className="relative">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="w-24 h-24 mx-auto mb-6 relative"
+      <div className="relative z-10 px-6 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+          {/* Left Side - Content */}
+          <div className="space-y-8">
+            {/* Main Heading */}
+            <motion.h1 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, delay: 0.3, type: "spring", bounce: 0.3 }}
+              className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full blur-lg opacity-60" />
-              <div className="absolute inset-2 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-2xl">
-                <Sparkles className="w-10 h-10 text-blue-600 dark:text-blue-400" />
+              <motion.span 
+                initial={{ backgroundPosition: "0% 50%" }}
+                animate={{ backgroundPosition: "100% 50%" }}
+                transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
+                className="bg-gradient-to-r from-slate-900 via-blue-600 to-slate-900 dark:from-white dark:via-blue-400 dark:to-white bg-[length:200%_100%] bg-clip-text text-transparent drop-shadow-2xl"
+              >
+                Ankit Kumar
+              </motion.span>
+              <br />
+              <motion.span 
+                initial={{ backgroundPosition: "100% 50%" }}
+                animate={{ backgroundPosition: "0% 50%" }}
+                transition={{ duration:4, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
+                className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-cyan-500 via-blue-600 via-indigo-600 via-purple-600 to-pink-600 bg-[length:200%_100%] bg-clip-text text-transparent drop-shadow-xl"
+              >
+                Product Manager
+              </motion.span>
+            </motion.h1>
+            
+            {/* Description */}
+            <motion.p 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed font-medium max-w-2xl"
+            >
+              Crafting exceptional user experiences through{' '}
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent font-bold">data-driven insights</span>,{' '}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold">strategic thinking</span>, and{' '}
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-bold">agile innovation</span>.
+            </motion.p>
+            
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+                <Button 
+                  size="lg"
+                  variant="outline"
+                  className="px-8 py-4 border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-2xl text-lg font-bold bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:bg-white dark:hover:bg-slate-800 hover:border-slate-400 dark:hover:border-slate-500 transition-all duration-500 shadow-lg hover:shadow-xl"
+                  onClick={handleDownloadResume}
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Download Resume
+                </Button>
+              </motion.div>
+              
+              <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+                <Button 
+                  size="lg"
+                  variant="ghost"
+                  className="px-8 py-4 text-slate-700 dark:text-slate-300 rounded-2xl text-lg font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-500"
+                  onClick={() => scrollToSection('contact')}
+                >
+                  Contact Me
+                </Button>
+              </motion.div>
+            </motion.div>
+          </div>
+          
+          {/* Right Side - Profile Image */}
+          <div className="flex justify-center lg:justify-end">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5, x: 50 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 1.2, type: "spring", bounce: 0.4 }}
+            >
+              <div className="relative w-64 h-64 lg:w-80 lg:h-80">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full blur-lg opacity-60"
+                />
+                <div className="absolute inset-2 rounded-full overflow-hidden shadow-2xl">
+                  <Image
+                    src="/ankit.jpg"
+                    alt="Ankit Kumar"
+                    width={300}
+                    height={300}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
-        </motion.div>
-        
-        {/* Main Heading */}
-        <motion.h1 
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.3, type: "spring", bounce: 0.3 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight"
-        >
-          <motion.span 
-            initial={{ backgroundPosition: "0% 50%" }}
-            animate={{ backgroundPosition: "100% 50%" }}
-            transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
-            className="bg-gradient-to-r from-slate-900 via-blue-600 to-slate-900 dark:from-white dark:via-blue-400 dark:to-white bg-[length:200%_100%] bg-clip-text text-transparent drop-shadow-2xl"
-          >
-            Ankit Kumar
-          </motion.span>
-          <br />
-          <motion.span 
-            initial={{ backgroundPosition: "100% 50%" }}
-            animate={{ backgroundPosition: "0% 50%" }}
-            transition={{ duration:4, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
-            className="text-3xl md:text-5xl lg:text-6xl bg-gradient-to-r from-cyan-500 via-blue-600 via-indigo-600 via-purple-600 to-pink-600 bg-[length:200%_100%] bg-clip-text text-transparent drop-shadow-xl"
-          >
-            Product Manager
-          </motion.span>
-        </motion.h1>
-        
-        {/* Description */}
-        <motion.p 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed font-medium"
-        >
-          Crafting exceptional user experiences through{' '}
-          <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent font-bold">data-driven insights</span>,{' '}
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold">strategic thinking</span>, and{' '}
-          <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-bold">agile innovation</span>.
-        </motion.p>
-        
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
-        >
-    
-          <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="px-8 py-4 border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-2xl text-lg font-bold bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:bg-white dark:hover:bg-slate-800 hover:border-slate-400 dark:hover:border-slate-500 transition-all duration-500 shadow-lg hover:shadow-xl"
-              onClick={handleDownloadResume}
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Download Resume
-            </Button>
-          </motion.div>
-          
-          <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
-            <Button 
-              size="lg"
-              variant="ghost"
-              className="px-8 py-4 text-slate-700 dark:text-slate-300 rounded-2xl text-lg font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-500"
-              onClick={() => scrollToSection('contact')}
-            >
-              Contact Me
-            </Button>
-          </motion.div>
-        </motion.div>
+        </div>
 
+
+        
         {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-16"
         >
           {[
             { number: '25+', label: 'Projects Led' },
