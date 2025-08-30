@@ -64,7 +64,7 @@ const SponzaCaseStudy = () => {
                   <h2 className="text-2xl font-bold">Project Overview</h2>
                 </div>
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                  As Product Manager, I led Sponza.in from initial designs through launch in January 2025. 
+                  As a Product Manager, I led Sponza.in from initial designs and development. 
                   It's not just a connecting platform—it's an end-to-end ecosystem with messaging, 
                   campaign planning, secure payments, and analytics.
                 </p>
@@ -84,7 +84,6 @@ const SponzaCaseStudy = () => {
                     <ul className="space-y-1 text-slate-600 dark:text-slate-300">
                       <li>• Nano: 1K-5K followers</li>
                       <li>• Micro: 5K-25K followers</li>
-                      <li>• Focus on authentic engagement</li>
                     </ul>
                   </div>
                 </div>
@@ -132,7 +131,7 @@ const SponzaCaseStudy = () => {
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
                   <Users className="w-6 h-6 text-blue-600 mr-3" />
-                  <h2 className="text-2xl font-bold">User Research & Insights</h2>
+                  <h2 className="text-2xl font-bold">User Research</h2>
                 </div>
                 <div className="space-y-6">
                   <div className="grid md:grid-cols-3 gap-6 text-center">
@@ -150,7 +149,7 @@ const SponzaCaseStudy = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-3">Key Survey-Led Features</h3>
+                    <h3 className="font-semibold text-lg mb-3">Key Features</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <ul className="space-y-2 text-slate-600 dark:text-slate-300">
                         <li>• Direct messaging system</li>
@@ -275,18 +274,6 @@ const SponzaCaseStudy = () => {
                     <h3 className="font-semibold mb-2">Paid Advertising</h3>
                     <p className="text-sm text-slate-600 dark:text-slate-300">Meta ads targeting SMBs and micro-influencers</p>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Key Learnings */}
-            <Card className="border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl">
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-bold mb-6">Key Learnings</h2>
-                <div className="space-y-4 text-slate-600 dark:text-slate-300">
-                  <p><strong>AI Matching Accuracy:</strong> Implementing machine learning algorithms improved match quality by 40% compared to manual selection.</p>
-                  <p><strong>User Onboarding:</strong> Simplified registration process increased completion rates from 45% to 78%.</p>
-                  <p><strong>Trust Building:</strong> Transparent payment systems and verified profiles increased platform trust scores significantly.</p>
                 </div>
               </CardContent>
             </Card>
