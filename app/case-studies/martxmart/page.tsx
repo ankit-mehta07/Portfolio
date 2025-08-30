@@ -150,38 +150,37 @@ const MartxMartCaseStudy = () => {
             {/* Key Features */}
             <Card className="border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl">
               <CardContent className="p-8">
-                <h2 className="text-2xl font-bold mb-6">Key Features Implemented</h2>
+                <h2 className="text-2xl font-bold mb-6">Key Features</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div>
                       <h3 className="font-semibold text-lg text-indigo-600">User-friendly Interface</h3>
-                      <p className="text-slate-600 dark:text-slate-300">Intuitive design for easy navigation and product discovery</p>
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg text-indigo-600">Vendor Onboarding System</h3>
-                      <p className="text-slate-600 dark:text-slate-300">Streamlined registration and verification process</p>
+                      
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg text-indigo-600">Product Details & Comparisons</h3>
-                      <p className="text-slate-600 dark:text-slate-300">Comprehensive specifications and side-by-side comparisons</p>
+                      
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg text-indigo-600">Secure Payment Integration</h3>
-                      <p className="text-slate-600 dark:text-slate-300">Multiple payment options with escrow protection</p>
+                      <h3 className="font-semibold text-lg text-indigo-600">Payment Integration</h3>
+                      
                     </div>
                   </div>
                   <div className="space-y-4">
                     <div>
                       <h3 className="font-semibold text-lg text-indigo-600">Order Tracking</h3>
-                      <p className="text-slate-600 dark:text-slate-300">Real-time updates on purchase and delivery status</p>
+                     
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg text-indigo-600">Wishlist & Inquiry System</h3>
-                      <p className="text-slate-600 dark:text-slate-300">Save favorites and direct seller communication</p>
+                      
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg text-indigo-600">Quotation System</h3>
-                      <p className="text-slate-600 dark:text-slate-300">Request and manage custom quotes from vendors</p>
+                      
                     </div>
                   </div>
                 </div>
@@ -236,34 +235,6 @@ const MartxMartCaseStudy = () => {
                       <h3 className="font-semibold mb-2">Trust Building</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-300">Highlighted certifications, warranties, and secure payments</p>
                     </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Key Learnings */}
-            <Card className="border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl">
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-bold mb-6">Key Learnings & Impact</h2>
-                <div className="space-y-6">
-                  <div className="grid md:grid-cols-3 gap-6 text-center mb-6">
-                    <div>
-                      <div className="text-3xl font-bold text-indigo-600 mb-2">200+</div>
-                      <div className="text-slate-600 dark:text-slate-300">Verified Sellers</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-purple-600 mb-2">1000+</div>
-                      <div className="text-slate-600 dark:text-slate-300">Machinery Listings</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-green-600 mb-2">92%</div>
-                      <div className="text-slate-600 dark:text-slate-300">User Satisfaction</div>
-                    </div>
-                  </div>
-                  <div className="space-y-4 text-slate-600 dark:text-slate-300">
-                    <p><strong>Trust is Paramount:</strong> Implementing seller verification and secure payments became the foundation of user confidence.</p>
-                    <p><strong>Simplified B2B Experience:</strong> Streamlined vendor onboarding reduced listing time from hours to minutes.</p>
-                    <p><strong>Direct Communication:</strong> Built-in inquiry and quotation systems eliminated communication barriers between buyers and sellers.</p>
                   </div>
                 </div>
               </CardContent>
